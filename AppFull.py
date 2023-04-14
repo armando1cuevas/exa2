@@ -7,8 +7,11 @@ import base64
 from io import BytesIO
 from docx import Document
 
+openai.api_key = st.secrets["OPENAI_KEY"]
+os.environ["OPENAI_API_KEY"] = openai.api_key
+
 def generate_questions_gpt35_turbo(text, num_questions, question_type):
-    api_key = os.environ.get('OPENAI_API_KEY')
+    #api_key = os.environ.get('OPENAI_API_KEY')
 
     if question_type == "Opción múltiple":
         gpt_prompt = f"Por favor, genera {num_questions} preguntas de opción múltiple con 4 opciones de respuesta de las cuales solo una es correcta. Agrega un asterisco al final de la respuesta correcta."
