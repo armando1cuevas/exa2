@@ -45,7 +45,7 @@ def read_pdf(file):
     pdf_reader = PyPDF2.PdfReader(file)
     text = ""
     for page in range(len(pdf_reader.pages)):
-        text += pdf_reader.pages[page].extractText()
+        text += pdf_reader.pages[page].extract_text()
     return text
 
 def read_docx(file):
