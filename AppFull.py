@@ -42,7 +42,7 @@ def generate_questions_gpt35_turbo(text, num_questions, question_type, num_optio
     return response['choices'][0]['message']['content'].strip()
 
 def read_pdf(file):
-    pdf_reader = PyPDF2.PdfFileReader(file)
+    pdf_reader = PyPDF2.PdfReader(file)
     text = ""
     for page in range(pdf_reader.numPages):
         text += pdf_reader.getPage(page).extractText()
